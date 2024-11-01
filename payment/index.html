@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Payment</title>
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header>
+    <h2><i class="fa fa-calendar" style="color: green;"></i> Plan status</h2>
+  </header>
+  <br>
+  <div class="holder">
+    <div class="box">
+      <h3><i class="fa fa-tag" style="color:green;"></i> Current plan</h3><br>
+      <p class="planType"></p>
+    </div>
+    <div class="box">
+      <h3><i class="fa fa-clock" style="color:blue;"></i> Time left</h3><br>
+      <p class="currentTime"></p>
+    </div>
+  </div>
+  <h3 style="text-align: center;">Available plans for purchase</h3>
+  <div class="plan1">
+    <h4><i class="fa fa-calendar-check"></i> Initial plan</h4>
+    <p style="font-size: 8pt;">+7 months</p>
+    <p class="price1" style="font-size: 10pt;">₦5000</p>
+    <button class="buy1" style="font-size: 8pt;" disabled>Already purchased</button>
+  </div>
+  
+  <div class="plan2">
+    <h4><i class="fa fa-calendar-check"></i> Standard plan</h4>
+    <p style="font-size: 8pt;">+2 months</p>
+    <p class="price2" style="font-size: 10pt;">₦5000</p>
+    <button class="buy2" onclick="lunchSheet(value = 5000)">Upgrade</button>
+  </div>
+  
+  <div class="plan3">
+    <h4><i class="fa fa-calendar-check"></i> Premium plan</h4>
+    <p style="font-size: 8pt;">Unlimited</p>
+    <p class="price3" style="font-size: 10pt;">₦10000</p>
+    <button class="buy3" onclick="lunchSheet(value = 10000)">Upgrade</button>
+  </div>
+  <div class="balance1">
+    <h5 class="balance"></h5>
+  </div>
+  
+  <div class="bottomsheet">
+    <div class="back" onclick="backbtn()"></div>
+    <h2 style="text-align: center;">Transfer to the account below</h2>
+    <p>Bank name:OPAY</P>
+    <p>Account number: 9065590812</p>
+    <p class="price"></p>
+    <button class="sent" onclick="checkPayment()">Ive sent the money</button>
+  </div>
+  <div class="prompt">
+    <form id="lan">
+      <h5>Confirm transaction</h5>
+      <label for="Input">Input transaction id from opay</label>
+      <input class = "val" type="text"required>
+      <button type="submit">Query</button>
+      <p class="message">Please wait.. check back later</p>
+    </form>
+  </div>
+ <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-app.js"></script>
+ <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-database.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>

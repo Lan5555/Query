@@ -1,0 +1,269 @@
+:root {
+  --shadow-box: 0 0.15rem 1.75rem 0 rgba(33, 40, 50, 0.15); /* Added commas for RGBA */
+}
+
+* {
+  
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  transition:all 0.3s ease-in-out;
+  overflow: auto;
+}
+
+header {
+  height: 40px;
+  box-shadow: var(--shadow-box);
+  padding: 10px;
+}
+
+header h2 {
+  margin-left: 10px;
+  font-size: 13pt;
+}
+
+.holder {
+  display: flex;
+  margin: 10px;
+  gap: 20px;
+}
+
+.box {
+  width: 50%;
+  height: 90px;
+  box-shadow: var(--shadow-box);
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.box h3 {
+  text-align: center;
+  font-size: 13pt;
+}
+
+.box p {
+  text-align: center;
+  font-size: 11pt;
+}
+
+.box:nth-of-type(1) {
+  border-left: 3px solid green;
+}
+
+.box:nth-of-type(2) {
+  border-left: 3px solid blue;
+}
+
+.plan1,
+.plan2,
+.plan3 {
+  display: flex; /* Using flexbox for better layout */
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: var(--shadow-box);
+  height: 90px;
+  padding: 10px;
+  margin: 15px;
+  border-radius: 5px;
+  gap:20px;
+}
+
+.plan1 {
+  border-left: 3px solid red;
+}
+
+.plan2 {
+  border-left: 3px solid green;
+}
+
+.plan3 {
+  border-left: 3px solid gold;
+}
+
+.price1,
+.price2,
+.price3 {
+  font-weight: bold; /* Emphasize price */
+}
+
+.buy1 {
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  color: black;
+  cursor: not-allowed; /* Indicate disabled state */
+}
+
+.buy2 {
+  border: none;
+  border-radius: 10px;
+  padding: 8px;
+  background-color: green;
+  color: white;
+  box-shadow: 0 0 2px pink;
+  cursor: pointer;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  font-size: 8pt;
+}
+
+.buy2:hover {
+  background-color: darkgreen;
+  box-shadow: 0 0 5px darkgreen;
+}
+
+.buy3 {
+  border: none;
+  border-radius: 10px;
+  padding: 8px;
+  background-color: gold;
+  color: black;
+  box-shadow: 0 0 2px pink;
+  cursor: pointer;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  font-size: 8pt;
+}
+
+.buy3:hover {
+  background-color: goldenrod;
+  box-shadow: 0 0 5px goldenrod;
+}
+
+.bottomsheet {
+  position: fixed;
+  bottom: -400px;
+  height: 50vh;
+  width: 100%;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  box-shadow: var(--shadow-box);
+  transition: all 0.3s ease-in-out;
+  background-color: white;
+  display: flex;
+  animation: slideIn 0.3s ease-in-out;
+  justify-content:center;
+  align-items: center;
+  flex-direction: column;
+  gap:25px;
+}
+@keyframes slideIn{
+  from{
+    transform: translateY(400px);
+  } to {
+    transform: translateY(0px);
+  }
+}
+.bg{
+  background-color: grey;
+}
+.bottomsheet button{
+  border:none;
+  border-radius: 10px;
+  padding:10px;
+  background-color: green;
+  box-pack: 0 0 2px grey;
+  color:white;
+}
+.bottomsheet h2{
+  color: green;
+}
+.back{
+  position:relative;
+  top:-58px;
+  width:80px;
+  height:5px;
+  background-color: lightgreen;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+.toggleSheet{
+  bottom:0;
+}
+@media only screen and (min-width:542px){
+  .bottomsheet {
+    position: fixed;
+    bottom: -800px;
+    height: 30vh;
+    width: 100%;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    box-shadow: var(--shadow-box);
+    transition: all 0.3s ease-in-out;
+    background-color: white;
+    display: flex;
+    animation: slideIn 0.3s ease-in-out;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 25px;
+  }
+  .toggleSheet {
+    bottom: 0;
+  }
+  .back {
+    position: relative;
+    top: -170px;
+    width: 80px;
+    height: 5px;
+    background-color: lightgreen;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+}
+.prompt{
+  position: absolute;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  box-shadow: var(--shadow-box);
+  border-radius: 5px;
+  background-color: white;
+  height:230px;
+  width:70%;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  
+}
+.prompt input{
+  border: none;
+  padding:10px;
+  border-radius: 10px;
+  background-color: grey;
+  opacity:0.4;
+  outline: none;
+  color:black;
+  font-weight: bold;
+}
+.prompt button{
+  border:none;
+  padding:10px;
+  border-radius: 10px;
+}
+#lan{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap:20px;
+}
+label{
+  font-size: 10pt;
+}
+.prompt p{
+  display:none;
+font-size:10pt;
+}
+.balance1{
+ box-shadow: var(--shadow-box);
+ margin: 15px;
+ height: 30px;
+ padding: 5px;
+}
+.balance{
+  text-align: center;
+  font-size: 10pt;
+}
